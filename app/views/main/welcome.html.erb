@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YaipApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div style="margin-left: auto; margin-right: auto; margin-top: 20%; text-align: center;">
+      <%= link_to t('header.registration'), '/signup' %><hr>
+      <%= link_to t('header.login'), '/login' %><hr>
+      <%= link_to t('header.guest'), '/gallery' %>
+    </div>
+  </body>
+  <footer>
+
+  <div class="language-select">
+    <%= form_tag(change_language_path, method: :post) do %>
+      <%= select_tag(:locale, options_for_select([['English', 'en'], ['Русский', 'ru']], I18n.locale.to_s), class: 'form-select', onchange: 'this.form.submit();', style: 'width: 135px;') %>
+    <% end %>
+  </div>
+</footer>
+</html>

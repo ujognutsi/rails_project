@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3" style="margin-left: 42%; margin-top: 10%;">
+    <%= form_with model: User do |f| %>
+      <% @user.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+      <% end %>
+      <%= f.label t('users.nickname') %><br>
+      <%= f.text_field :nickname %><br>
+
+      <%= f.label t('users.email') %><br>
+      <%= f.email_field :email %><br>
+
+      <%= f.label t('users.password') %><br>
+      <%= f.password_field :password %><br>
+
+      <%= f.label t('users.password_confirm') %><br>
+      <%= f.password_field :password_confirmation %><br>
+      <%= f.submit t('users.create'), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

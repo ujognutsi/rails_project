@@ -1,0 +1,23 @@
+<%= content_tag(:h1, t('images.all')) %>
+<% @image.each do |i| %>
+<div class="col", style="width: 357.75px; height: 357.75px; display: inline-block;">
+  <div class="card shadow-sm">
+    <div style="margin-left: auto; margin-right: auto;">
+      <%= image_tag(i.wallpaper, size: "225x225") %>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><%= i.name %><br><%= i.description %></font></font></font></font></p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <% if logged_in? %>
+            <% if current_user.password_digest == '$2a$12$JOC/ephoGVXKpfJACrBaT.eGnRwLh4gChazwTxTm7S/lIOGrjlBv.' %>
+              <%= button_to t('images.edit'), "/images/#{i.id}/edit", class: "btn btn-sm btn-outline-secondary", method: :get %>
+            <% end %>
+          <% end %>
+          <%= button_to t('images.view'), "/images/#{i.id}", class: "btn btn-sm btn-outline-secondary", method: :get %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,35 @@
+en:
+  header:
+    welcome: 'Welcome'
+    new: 'Add new'
+    gallery: 'Gallery'
+    logout: 'Logout'
+    login: 'Login'
+    registration: 'Registration'
+    guest: 'Login as guest'
+
+  users:
+    nickname: 'Nickname'
+    email: 'Email'
+    password: 'Password'
+    password_confirm: 'Confirm the password'
+    create: 'Create my account'
+
+  login:
+    password: 'Input the password'
+    email: 'Input the email'
+    signupnow: 'Sign up now!'
+    newuser: 'New user?'
+
+  images:
+    view: 'View'
+    all: 'All wallpapers'
+    edit: 'Edit'
+    download: 'Download'
+    download2: 'Download'
+    rate: 'Rate'
+    destroy: 'Destroy'
+    sure?: 'Are you sure?'
+    name: 'Input the name'
+    description: 'Input the description'
+    add_link: 'Download the picture'

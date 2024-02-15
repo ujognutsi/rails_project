@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YaipApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+
+  <body>
+    <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><%= link_to t('header.welcome'), '/', class: "nav-link px-2 text-white" %></li>
+          <li><%= link_to t('header.gallery'), '/gallery', class: "nav-link px-2 text-white" %></li>
+          <% if logged_in? %>
+            <% if current_user.password_digest == '$2a$12$JOC/ephoGVXKpfJACrBaT.eGnRwLh4gChazwTxTm7S/lIOGrjlBv.' %>
+              <li><%= link_to t('header.new'), '/images/new', class: "nav-link px-2 text-white" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+        <div class="text-end">
+        <% if logged_in? %>
+          <%= link_to t('header.logout'), logout_path, class: "btn btn-danger", :method => :delete %>
+        <% else %>
+          <%= button_to t('header.login'), "/login", class: "btn btn-outline-light me-2", :method => :get %>
+          <%= button_to t('header.registration'), "/signup", class: "btn btn-warning", :method => :get %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    </header>
+    <% if logged_in? %>
+      <% if current_user.password_digest == '$2a$12$JOC/ephoGVXKpfJACrBaT.eGnRwLh4gChazwTxTm7S/lIOGrjlBv.' %>
+        <%= @user&.each do |i| %>
+          <p id="user_id"><%= i.id %></p><br>
+          <p id="user_email"><%= i.email %></p><br>
+          <p id="user_nickname"><%= i.nickname %></p>
+          <hr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </body>
+</html>

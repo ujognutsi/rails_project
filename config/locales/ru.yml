@@ -1,0 +1,35 @@
+ru:
+  users:
+    nickname: 'Никнейм'
+    email: 'Электронная почта'
+    password: 'Пароль'
+    password_confirm: 'Подтвердите пароль'
+    create: 'Создать аккаунт'
+
+  login:
+    password: 'Введите пароль'
+    email: 'Введите почту'
+    signupnow: 'Зарегистрироваться сейчас'
+    newuser: 'Новый пользователь?'
+
+  header:
+    welcome: 'Приветственная'
+    new: 'Новые обои'
+    gallery: 'Галерея'
+    logout: 'Выйти'
+    login: 'Войти'
+    registration: 'Регистрация'
+    guest: 'Войти как гость'
+
+  images:
+    view: 'Посмотреть'
+    all: 'Все обои'
+    edit: 'Редактировать'
+    download: 'Скачать'
+    download2: 'Загрузить'
+    rate: 'Оценить'
+    destroy: 'Удалить'
+    sure?: 'Вы уверены?'
+    name: 'Введите название'
+    description: 'Введите описание'
+    add_link: 'Загрузите картинку'

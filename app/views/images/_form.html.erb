@@ -1,0 +1,12 @@
+<%= form_with model: Image do |f| %>
+  <% @image.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+  <% end %>
+  <%= f.label t('images.name') %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label t('images.description') %><br>
+  <%= f.text_area :description %><br>
+  <%= f.label t('images.add_link') %><br>
+  <%= f.file_field :wallpaper %><br>
+  <%= f.submit t('images.download2') %>
+<% end %>
